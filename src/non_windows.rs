@@ -46,7 +46,7 @@ struct Compiler {
 
 impl Compiler {
     pub fn probe() -> Option<Compiler> {
-        let target = env::var("TARGET").ok()?;
+        let target = dbg!(env::var("TARGET")).ok()?;
 
         if let Some(rc) = env::var(&format!("RC_{}", target))
             .or_else(|_| env::var(&format!("RC_{}", target.replace('-', "_"))))

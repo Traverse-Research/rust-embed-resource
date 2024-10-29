@@ -17,7 +17,7 @@ pub struct ResourceCompiler;
 impl ResourceCompiler {
     #[inline(always)]
     pub fn new() -> ResourceCompiler {
-        ResourceCompiler
+        dbg!(ResourceCompiler)
     }
 
     #[inline(always)]
