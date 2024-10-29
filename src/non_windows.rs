@@ -64,8 +64,8 @@ impl Compiler {
                 });
             }
         } else if target.ends_with("-pc-windows-msvc") {
-            if is_runnable("llvm-rc") {
-                return Some(Compiler {
+            if dbg!(is_runnable("llvm-rc")) {
+                return dbg!(Some(Compiler {
                     tp: CompilerType::LlvmRc {
                         has_no_preprocess: Command::new("llvm-rc")
                             .arg("/?")
@@ -75,7 +75,7 @@ impl Compiler {
                             .unwrap_or(false),
                     },
                     executable: "llvm-rc".into(),
-                });
+                }));
             }
         }
 
